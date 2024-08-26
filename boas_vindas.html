@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <title>Boas Vindas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+        
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'AR One Sans', 'sans-serif';
+        }
+        .nav-boas-vindas {
+            width: 100%;
+            height: 80px;
+            position: absolute;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 4rem;
+            z-index: 3;
+        }
+        .logo-boas-vindas img {
+            width: 50px;
+            height: 50px;
+        }
+        .nav-boas-vindas li {
+            list-style: none;
+        }
+        .nav-boas-vindas li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            font-weight: 500;
+        }
+        .div-login-boas-vindas {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .div-login-boas-vindas li {
+            display: flex;
+            gap: 5px;
+           
+        }
+        .div-login-boas-vindas li svg {
+            fill: #fff;
+            height: 1.2em;
+        }
+        #link-vender {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 3px;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 20px;
+            
+        }
+        #link-vender a {
+            color: #004E29;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .img-header {
+            width: 100%;
+            height: 400px;
+            background-image: url(https://www.decorfacil.com/wp-content/uploads/2018/11/20181121como-plantar-morango-vasos.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        .overlay-slide {
+            width: 100%;
+            height: 600px;
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            z-index: 2;
+        }
+        .swiper-slide {
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+        }
+
+        .swiper-slide .image-slide {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #swiper-slide {
+            background-color: #006837;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://blog.plantei.com.br/wp-content/uploads/2016/05/plantar-melancia.jpg);
+            background-position: center;
+            background-size: cover;
+            border-radius: 3px;
+            border: 1px solid #004E29;
+            /* border-bottom-left-radius: 25px;
+            border-top-right-radius: 25px;
+            box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.1); */
+        }
+
+        .container-slide {
+            padding: 8rem 4rem;
+            color: #fff;
+            z-index: 2;
+            position: relative;
+            display: flex;
+            gap: 4rem;
+            width: 600px;
+        }
+
+        .title-slide {
+            font-size: 44px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .subtitle-slide {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 35px;
+        }
+
+        .link-slide {
+            text-decoration: none;
+            color: #004E29;
+            padding: 15px 45px;
+            background-color: #fff;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-boas-vindas">
+            <a href="#" class="logo-boas-vindas"><img src="./logo4.png" alt="logo"></a>
+
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Quem somos</a></li>
+                    <li><a href="#">Fale conosco</a></li>
+                    <li><a href="#">Sugestões</a></li>
+
+                    <div class="div-login-boas-vindas">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M406.5 399.6C387.4 352.9 341.5 320 288 320H224c-53.5 0-99.4 32.9-118.5 79.6C69.9 362.2 48 311.7 48 256C48 141.1 141.1 48 256 48s208 93.1 208 208c0 55.7-21.9 106.2-57.5 143.6zm-40.1 32.7C334.4 452.4 296.6 464 256 464s-78.4-11.6-110.5-31.7c7.3-36.7 39.7-64.3 78.5-64.3h64c38.8 0 71.2 27.6 78.5 64.3zM256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-272a40 40 0 1 1 0-80 40 40 0 1 1 0 80zm-88-40a88 88 0 1 0 176 0 88 88 0 1 0 -176 0z"/></svg>
+                            <a href="#">Login</a>
+                        </li>
+                        <li id="link-vender"><a href="#">Começar vender</a></li>
+                    </div>
+                    
+
+            <div class="button-menu" onclick="toggleMenuOpen()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+              </div>
+        </nav>
+    </header>
+
+    <!-- <div class="img-header">
+        <div class="overlay-img-header"></div>
+    </div> -->
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff;" class="swiper-slide slideSwiper">
+        <div class="swiper-wrapper">
+      
+          <div class="swiper-slide" id="swiper-slide">
+            <div class="overlay-slide"></div>
+            <div class="container-slide">
+     
+              <div class="content-slide">
+                <div class="title-slide">
+                    Crie sua loja online e comece a vender hoje
+                </div>
+      
+                <div class="subtitle-slide">Faça como os mais de 120 mil lojistas
+                    apaixonados por empreender.</div>
+      
+                <a class="link-slide" href="#">VAMOS LÁ</a>
+              </div>
+          </div>
+         </div>
+          <div class="swiper-slide" id="swiper-slide" style="background-image: url(https://www.decorfacil.com/wp-content/uploads/2018/11/20181121como-plantar-morango-vasos.jpg);">
+            <div class="overlay-slide"></div>
+            <div class="container-slide">
+              
+              <div class="content-slide">
+                <div class="title-slide">
+                  REGADOR AUTOMÁTICO INTEGRADO COM ARDUINO
+                </div>
+      
+                <div class="subtitle-slide">Compre o seu regador automático e otimize sua colheita!</div>
+      
+                <a class="link-slide" href="#">COMPRE AGORA</a>
+              </div>
+          </div>
+         </div>
+         
+          <div class="swiper-slide" id="swiper-slide" style="background-image: url(https://celeirodobrasil.com.br/wp-content/uploads/2017/11/shutterstock_129827255_s-e1460501275705.jpg);">
+            <div class="overlay-slide"></div>
+            <div class="container-slide">
+              
+              <div class="content-slide">
+                <div class="title-slide">
+                  REGADOR AUTOMÁTICO INTEGRADO COM ARDUINO
+                </div>
+      
+                <div class="subtitle-slide">Compre o seu regador automático e otimize sua colheita!</div>
+      
+                <a class="link-slide" href="#">COMPRE AGORA</a>
+              </div>
+          </div>
+         </div>
+         
+          </div>
+          <!-- <div class="swiper-button-next" style="color: #000;"></div>
+          <div class="swiper-button-prev" style="color: #000;"></div> -->
+      
+          <div class="swiper-pagination" id="swiper-pagination-slide"></div>
+        </div>
+      
+      </div>
+      <script type="module">
+        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.js'
+
+
+    var swiper = new Swiper(".slideSwiper", {
+        autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+      },
+      keyboard: {
+        enabled: true,
+      },
+      speed: 600,
+      parallax: true,
+      direction: 'horizontal',
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        centeredSlides: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+</script>
+</body>
+</html>
+

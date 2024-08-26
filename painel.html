@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: #004E29; */
+    /* background-image: linear-gradient(to top, #000, #004E29); */
+    /* background-color: #004AAD; */
+    /* background: linear-gradient(90deg, #378af7, #004AAD); */
+    /* background: linear-gradient(90deg, #089b56, #004E29); */
+    padding: 1rem;
+    /* background-image: url(https://fontawesome.com/images/icons-gray-bg.svg); */
+}
+
+.section-painel {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5rem;
+}
+
+.nav-painel {
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 3px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #004E29;
+    
+}
+
+.logo-painel img {
+    width: 150px;
+}
+
+#title {
+    padding-bottom: 10px;
+}
+
+#container {
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 18px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border: 1px solid #004E29;
+}
+
+.container-buttons {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    border: 1px solid #004E29;
+    margin-top: 1.5rem;
+}
+
+
+.card-button {
+    background-color: #fff;
+    width: 100%;
+    height: 80px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+
+#search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+    padding: 4px 12px;
+}
+
+#search input {
+    border: none;
+    background-color: #fff;
+    font-size: 18px;
+    width: 100%;
+    height: 40px;
+}
+
+#search input:focus {
+    outline: none;
+}
+
+#search button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#weather {
+    /* display: none; */
+    margin-top: 20px;   
+}
+
+#weather.show {
+    display: block;
+}
+
+#weather #title {
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #372f3f;
+}
+
+#i-location, #i-search {
+    color: #004E29;
+    font-size: 20px;
+}
+
+
+#i-location {
+    margin-right: 5px;
+}
+
+#i-on, #i-atualizar {
+    color: #fff;
+    font-size: 20px;
+}
+
+#temp {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    /* background: linear-gradient(90deg, #004E29, #004E29); */
+    /* background: linear-gradient(90deg, #5a7cdc, #606dde); */
+    color: #fff;
+    border-radius: 3px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 20px;
+}
+
+#temp_img {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+#temp_value {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 55px;
+}
+
+#temp_description {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+
+#other_infos {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+#other_infos .info {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    gap: 10px;
+    
+}
+
+#other_infos .info h2 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#other_infos .info i {
+    text-align: center;
+    font-size: 20px;
+    width: 20%;
+}
+
+#temp_max_icon {
+    color: #7f1d1d;
+}
+
+#temp_min_icon {
+    color: #0284c7;
+}
+
+#humidity_icon {
+    color: #0ea5e9;
+}
+
+#wind_icon {
+    color: #7c3aed;
+}
+
+#alert {
+    display: flex;
+    align-items: center;
+    /* background-color: #004AAD; */
+    /* width: 100%;
+    height: 40px; */
+    color: #004E29;
+    /* padding: 1rem;
+    border-radius: 10px; */
+    margin-top: 20px;
+}
+
+#alert img {
+    width: 200px;
+    margin-top: 20px;
+}
+
+.button-regar, .button-atualizar {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    background-color: #004E29;
+    border-radius: 3px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    gap: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.button-menu {
+    display: block;
+}
+
+.button-menu svg {
+    fill: #004E29;
+}
+
+.nav-menu-mobile {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    translate: -100% 0;
+    width: 320px;
+    height: 100%;
+    padding: 2rem 1rem;
+    background: #fff;
+    visibility: hidden;
+    transition: all .5s;
+}
+
+.nav-links {
+    /* color: #929292; */
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: .3s ease;
+}
+
+.nav-list {
+    background-color: #004E29;
+    padding: 1rem;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.container-historico {
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-top: 20px;
+    border: 1px solid #004E29;
+}
+
+.historico {
+    background-color: #fff;
+    width: 100%;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    border-radius: 3px;
+    padding: 1rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+.historico p, .historico i {
+    color: #004E29;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.container-historico h1 {
+    background-color: #fff;
+    color: #004E29;
+    width: 100%;
+    padding: 1rem;
+    font-size: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+    .nav-painel {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container-buttons {
+       flex-wrap: wrap;
+    }
+}
+    </style>
+    <title>Painel</title>
+</head>
+<body>
+
+    <nav class="nav-painel">
+        <div class="navbar-overlay-mobile" onclick="toggleMenuOpen()"></div>
+        <a href="./index.html" class="logo-painel"><img src="./logo-painel.png" alt=""></a>
+
+        <div class="button-menu" onclick="toggleMenuOpen()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+        </div>
+    </nav>
+
+    <nav class="nav-menu-mobile">
+        <li class="nav-list"><a href="./index.html" class="nav-links">Início</a></li>
+        <li class="nav-list"><a href="#" class="nav-links">Meus Produtos</a></li>
+        <li class="nav-list"><a href="#" class="nav-links">Catálogo</a></li>
+    </nav>
+
+    <section class="section-painel">
+            <div id="container">
+                    <form id="search">
+                        <i class="fa-solid fa-location-dot" id="i-location"></i>
+                        <input type="search" name="city_name" id="city_name" placeholder="Buscar cidade">
+                        <button type="submit">
+                            <i class="fa-solid fa-magnifying-glass" id="i-search"></i>
+                        </button>
+                    </form>
+
+                    <div id="weather">
+                        <h1 id="title"></h1>
+
+                        <div id="infos">
+                            <div id="temp">
+                                <img id="temp_img" src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
+                                
+                                <div>
+                                    <p id="temp_value"></p>
+                                    <p id="temp_description"></p>
+                                </div>
+                            </div>
+
+                            <div id="other_infos">
+                                <div class="info">
+                                    <i id="temp_max_icon" class="fa-solid fa-temperature-high"></i>
+
+                                    <div>
+                                        <h2>Temp. max</h2>
+                                        <p id="temp_max"><sup></sup></p>
+                                    </div>
+                                </div>
+
+                                <div class="info">
+                                    <i id="temp_min_icon" class="fa-solid fa-temperature-low"></i>
+
+                                    <div>
+                                        <h2>Temp. min</h2>
+                                        <p id="temp_min"><sup></sup></p>
+                                    </div>
+                                </div>
+
+                                <div class="info">
+                                    <i id="humidity_icon" class="fa-solid fa-droplet"></i>
+
+                                    <div>
+                                        <h2>Humidade</h2>
+                                        <p id="humidity"></p>
+                                    </div>
+                                </div>
+
+                                <div class="info">
+                                    <i id="wind_icon" class="fa-solid fa-wind"></i>
+
+                                    <div>
+                                        <h2>Vento</h2>
+                                        <p id="wind"></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="alert"></div>
+                </div>
+
+                <div class="container-buttons">
+                    <div class="card-button">
+                        <div class="button-regar">
+                            <i class="fa-solid fa-power-off" id="i-on"></i>
+                            <p>Regar agora</p>
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <div class="button-atualizar">
+                            <i class="fa-solid fa-rotate-right" id="i-atualizar"></i>
+                            <p>Atualizar</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-historico">
+                    <h1>
+                        Histórico de Irrigação
+                    </h1>
+
+                    <div class="historico">
+                        <p>11:30AM</p>
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+
+                    <div class="historico">
+                        <p>14:30PM</p>
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+
+                    <div class="historico">
+                        <p>18:30PM</p>
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+
+                    <div class="historico">
+                        <p>5:30AM</p>
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+
+                    <div class="historico">
+                        <p>9:30AM</p>
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                </div>
+    </section>
+
+    
+    
+    <script>
+        const toggleMenuOpen = () => document.body.classList.toggle("open-menu");
+
+
+        document.querySelector('#search').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const cityName = document.querySelector('#city_name').value;
+
+    if (!cityName) {
+        document.querySelector("#weather").classList.remove('show');
+        showAlert('Você precisa digitar uma cidade...');
+        return;
+    }
+
+    const apiKey = '8a60b2de14f7a17c7a11706b2cfcd87c';
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(cityName)}&appid=${apiKey}&units=metric&lang=pt_br`
+
+    const results = await fetch(apiUrl);
+    const json = await results.json();
+
+    if (json.cod === 200) {
+        showInfo({
+            city: json.name,
+            country: json.sys.country,
+            temp: json.main.temp,
+            tempMax: json.main.temp_max,
+            tempMin: json.main.temp_min,
+            description: json.weather[0].description,
+            tempIcon: json.weather[0].icon,
+            windSpeed: json.wind.speed,
+            humidity: json.main.humidity,
+        });
+    } else {
+        document.querySelector("#weather").classList.remove('show');
+        showAlert(`
+            Não foi possível localizar...
+
+           
+        `)
+    }
+});
+
+function showInfo(json){
+    showAlert('');
+
+    document.querySelector("#weather").classList.add('show');
+
+    document.querySelector('#title').innerHTML = `${json.city}, ${json.country}`;
+
+    document.querySelector('#temp_value').innerHTML = `${json.temp.toFixed(1).toString().replace('.', ',')} <sup>C°</sup>`;
+    document.querySelector('#temp_description').innerHTML = `${json.description}`;
+    document.querySelector('#temp_img').setAttribute('src', `https://openweathermap.org/img/wn/${json.tempIcon}@2x.png`)
+
+    document.querySelector('#temp_max').innerHTML = `${json.tempMax.toFixed(1).toString().replace('.', ',')} <sup>C°</sup>`;
+    document.querySelector('#temp_min').innerHTML = `${json.tempMin.toFixed(1).toString().replace('.', ',')} <sup>C°</sup>`;
+    document.querySelector('#humidity').innerHTML = `${json.humidity}%`;
+    document.querySelector('#wind').innerHTML = `${json.windSpeed.toFixed(1)}km/h`;
+}
+
+function showAlert(msg) {
+    document.querySelector('#alert').innerHTML = msg;
+}
+    </script>
+</body>
+</html>

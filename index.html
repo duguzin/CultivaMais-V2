@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <title>CultivaMais</title>
+</head>
+<body>
+    <header>
+      <!-- <nav>
+
+        <a href="#" class="logo">Logo</a>
+
+          <li class="nav-list"><a href="#" class="nav-links">Teste</a></li>
+          <li class="nav-list"><a href="#" class="nav-links">Teste</a></li>
+          <li class="nav-list"><a href="#" class="nav-links">Teste</a></li>
+          <li class="nav-list"><a href="#" class="nav-links">Teste</a></li>
+     
+
+          <div class="input-pesquisa">
+            <span class="material-symbols-outlined">search</span>
+              <input type="text" placeholder="pesquise aqui...">
+          </div>
+
+         <button id="button-menu">
+             <span class="material-symbols-outlined">menu</span>
+         </button> 
+      </nav> -->
+
+      <nav class="nav-main">
+        <div class="navbar-overlay" onclick="toggleCarrinhoOpen()"></div>
+        <div class="navbar-overlay-mobile" onclick="toggleMenuOpen()"></div>
+
+
+          <div class="button-menu" onclick="toggleMenuOpen()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+          </div>
+
+          <div class="input-pesquisa">
+            <input type="text" class="input-pesquisa-active" placeholder="O que você está procurando?">
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleInputOpen()" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+          </div>
+
+
+          <a href="./index.html" class="logo"><img src="./logo.png" alt=""></a>
+          
+          
+
+          <div class="div-input-cart-nav">
+            <!-- <div class="input-pesquisa-mobile">
+              <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleInputOpen()" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+            <!-- </div>--> 
+            <div class="svg-carrinho-mobile" onclick="toggleCarrinhoOpen()">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+            </div>
+          </div>
+
+
+          <div class="svg-carrinho" onclick="toggleCarrinhoOpen()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+            <p>( 0 )</p>
+          </div>
+
+          
+          <div class="menu-carrinho">
+            <div class="header-menu-carrinho">
+              <h1>Seu carrinho</h1>
+            </div>
+            <div class="item-carrinho">
+              <span>Seu carrinho ainda está vazio</span>
+            </div>
+          </div>
+          
+      </nav>
+
+    
+
+      <nav class="nav-menu">
+        <li class="nav-list"><a href="./index.html" class="nav-links">Início</a></li>
+        <li class="nav-list"><a href="#" class="nav-links">Ofertas</a></li>
+        <li class="nav-list"><a href="#" class="nav-links">Vender</a></li>
+        <li class="nav-list"><a href="#" class="nav-links">Contato</a></li>
+        <li class="nav-list"><a href="./login.html" class="nav-links">Entrar</a></li>
+      </nav>
+
+      <nav class="nav-menu-mobile">
+        <li class="nav-list"><a href="#" class="nav-links">Início</a></li>
+        <li class="nav-list"><a href="#" class="nav-links">Ofertas</a></li>
+        <li class="nav-list"><a href="#" class="nav-links">Vender</a></li>
+        <li class="nav-list"><a href="#" class="nav-links">Contato</a></li>
+        <li class="nav-list"><a href="./login.html" class="nav-links">Entrar</a></li>
+      </nav>
+      
+  
+
+        <div class="swiper-text textSwiper" style="--swiper-navigation-color: #fff; --swiper-pagination-color: #2ca0da">
+         <div class="swiper-wrapper">
+           <div class="swiper-slide" id="swiper-slide-text">
+                <p>Frete grátis a partir de R$150</p>
+            </div>
+           <div class="swiper-slide" id="swiper-slide-text">
+                <p>Temos os melhores padrões de qualidade</p>
+            </div>
+
+           <!-- <div class="swiper-slide" id="swiper-slide-text">
+                <p>Teste</p>
+            </div>
+           </div> -->
+              <!-- <div class="swiper-button-next" style="color: red;"></div>
+              <div class="swiper-button-prev" style="color: red;"></div> -->
+        </div>
+
+        <div class="div-input-pesquisa-mobile">
+          <div class="input-pesquisa-mobile">
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleInputOpen()" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+              <input type="text" placeholder="O que você está procurando?">
+          </div>
+        </div>
+
+    </header>
+
+    <main>
+
+      <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff;" class="swiper-slide slideSwiper">
+        <div class="swiper-wrapper">
+      
+          <div class="swiper-slide" id="swiper-slide">
+            <div class="container-slide">
+     
+              <div class="content-slide">
+                <div class="title-slide">
+                Frete grátis para todo o país
+                </div>
+      
+                <div class="subtitle-slide">Só hoje, frete grátis, faça e aproveite!</div>
+      
+                <a class="link-slide" href="#">VAMOS LÁ</a>
+              </div>
+          </div>
+         </div>
+          <div class="swiper-slide" id="swiper-slide">
+            <div class="container-slide">
+              
+              <div class="content-slide">
+                <div class="title-slide">
+                  REGADOR AUTOMÁTICO INTEGRADO COM ARDUINO
+                </div>
+      
+                <div class="subtitle-slide">Compre o seu regador automático e otimize sua colheita!</div>
+      
+                <a class="link-slide" href="#">COMPRE AGORA</a>
+              </div>
+          </div>
+         </div>
+         
+          </div>
+          <!-- <div class="swiper-button-next" style="color: #000;"></div>
+          <div class="swiper-button-prev" style="color: #000;"></div> -->
+      
+          <div class="swiper-pagination" id="swiper-pagination-slide"></div>
+        </div>
+      
+      </div>
+      
+      <!-- <div class="img-header">
+        <div class="container-text-slide">
+          <h1>Trigo</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem hic sequi velit temporibus facilis aut, impedit aspernatur
+          </p>
+        </div>
+      </div> -->
+
+        <section class="section-main">
+        
+            <div class="swiper-card cardSwiper" style="--swiper-navigation-color: #fff; --swiper-pagination-color:  #004E29; padding: 0 1rem;">
+
+                <h3 class="title-oferta">Ofertas do Dia</h3>
+        
+                <div class="swiper-wrapper">
+        
+                  <div class="swiper-slide" id="swiper-card">
+                    <a href="item.html"><img  class="img-produto-card" src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt=""></a>
+                    <div class="container-content-card">
+                      <div class="div-favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
+                      </div>
+                      <img  class="img-estrela" src="https://static.vecteezy.com/system/resources/previews/010/366/276/non_2x/5-star-rating-review-star-transparent-free-png.png" alt="">
+                      <h3>Sacola 1kg de Trigo Natural</h3>
+                      <h1>R$ 599,99 <span class="span-porcent">47% off</span></h1>
+                      <div class="link-adicionar-carrinho">
+                        <a href="item.html">Adicionar</a> 
+                     </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" id="swiper-card">
+                    <a href="item.html"><img  class="img-produto-card" src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt=""></a>
+                    <div class="container-content-card">
+                      <div class="div-favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
+                      </div>
+                      <img  class="img-estrela" src="https://static.vecteezy.com/system/resources/previews/010/366/276/non_2x/5-star-rating-review-star-transparent-free-png.png" alt="">
+                      <h3>Sacola 1kg de Trigo Natural</h3>
+                      <h1>R$ 299,99 <span class="span-porcent">47% off</span></h1>
+                      <div class="link-adicionar-carrinho">
+                        <a href="item.html">Adicionar</a> 
+                     </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" id="swiper-card">
+                    <a href="item.html"><img  class="img-produto-card" src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt=""></a>
+                    <div class="container-content-card">
+                      <div class="div-favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
+                      </div>
+                      <img  class="img-estrela" src="https://static.vecteezy.com/system/resources/previews/010/366/276/non_2x/5-star-rating-review-star-transparent-free-png.png" alt="">
+                      <h3>Sacola 1kg de Trigo Natural</h3>
+                      <h1>R$ 199,99 <span class="span-porcent">47% off</span></h1>
+                      <div class="link-adicionar-carrinho">
+                        <a href="item.html">Adicionar</a> 
+                     </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" id="swiper-card">
+                    <a href="item.html"><img  class="img-produto-card" src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt=""></a>
+                    <div class="container-content-card">
+                      <div class="div-favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
+                      </div>
+                      <img  class="img-estrela" src="https://static.vecteezy.com/system/resources/previews/010/366/276/non_2x/5-star-rating-review-star-transparent-free-png.png" alt="">
+                      <h3>Sacola 1kg de Trigo Natural</h3>
+                      <h1>R$ 799,99 <span class="span-porcent">47% off</span></h1>
+                      <div class="link-adicionar-carrinho">
+                        <a href="item.html">Adicionar</a> 
+                     </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" id="swiper-card">
+                    <a href="item.html"><img  class="img-produto-card" src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt=""></a>
+                    <div class="container-content-card">
+                      <div class="div-favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
+                      </div>
+                      <img  class="img-estrela" src="https://static.vecteezy.com/system/resources/previews/010/366/276/non_2x/5-star-rating-review-star-transparent-free-png.png" alt="">
+                      <h3>Sacola 1kg de Trigo Natural</h3>
+                      <h1>R$ 799,99 <span class="span-porcent">47% off</span></h1>
+                      <div class="link-adicionar-carrinho">
+                        <a href="item.html">Adicionar</a> 
+                     </div>
+                    </div>
+                  </div>
+                  
+                  
+    
+              </div>
+
+              <!-- <div class="swiper-button-next" style="color: rgb(7, 26, 88);"></div>
+              <div class="swiper-button-prev" style="color: rgb(7, 26, 88);"></div> -->
+                
+              <div class="swiper-pagination-card"></div>
+              </div>
+    
+        </section>
+
+        <section class="section-item">
+
+          <div class="swiper-card-img-item img-cardSwiper" style="--swiper-navigation-color: #fff; --swiper-pagination-color:  #004E29;">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" id="swiper-card-img-item"></div>
+              <div class="swiper-slide" id="swiper-card-img-item"></div>
+              <div class="swiper-slide" id="swiper-card-img-item"></div>
+              <div class="swiper-slide" id="swiper-card-img-item"></div>
+              </div>
+          </div>
+              <div class="swiper-pagination-card"></div>
+          </div>
+
+          <div class="container-img-text">
+              <div class="container-imgs">
+                <div class="img-horizontal">
+                  <img src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt="">
+                  <img src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt="">
+                  <img src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt="">
+                </div>
+                  <img class="img-item" src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt="">
+              </div>
+    
+              
+              <div class="container-info-item">
+                  <h1>Sacola 1kg de Trigo Natural</h1>
+                  <h2>R$ 299,99</h2>
+                  <h3>Quantidade</h3>
+                  <div class="div-buttons-cart">
+                    <button class="button-quantidade">- 1 +</button>
+                    <a href="./item.html" class="button-comprar">Comprar</a>
+                  </div>
+                  
+                  <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus sed, 
+                      quaerat et doloremque provident nulla.
+                  </p>
+              </div>
+              
+          </div>
+
+        
+      </section>
+      
+        <section class="section-main">
+        
+            <div class="swiper-card cardSwiper" style="--swiper-navigation-color: #fff; --swiper-pagination-color:  #004E29; padding: 0 1rem;">
+
+                <h3 class="title-oferta">Ofertas do Dia</h3>
+        
+                <div class="swiper-wrapper">
+        
+                  <div class="swiper-slide" id="swiper-card">
+                    <a href="#"><img  class="img-produto-card" src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt=""></a>
+                    <div class="container-content-card">
+                      <div class="div-favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
+                      </div>
+                      <img  class="img-estrela" src="https://static.vecteezy.com/system/resources/previews/010/366/276/non_2x/5-star-rating-review-star-transparent-free-png.png" alt="">
+                      <h3>Sacola 1kg de Trigo Natural</h3>
+                      <h1>R$ 599,99 <span class="span-porcent">47% off</span></h1>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" id="swiper-card">
+                    <a href="#"><img  class="img-produto-card" src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt=""></a>
+                    <div class="container-content-card">
+                      <div class="div-favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
+                      </div>
+                      <img  class="img-estrela" src="https://static.vecteezy.com/system/resources/previews/010/366/276/non_2x/5-star-rating-review-star-transparent-free-png.png" alt="">
+                      <h3>Sacola 1kg de Trigo Natural</h3>
+                      <h1>R$ 299,99 <span class="span-porcent">47% off</span></h1>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" id="swiper-card">
+                    <a href="#"><img  class="img-produto-card" src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt=""></a>
+                    <div class="container-content-card">
+                      <div class="div-favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
+                      </div>
+                      <img  class="img-estrela" src="https://static.vecteezy.com/system/resources/previews/010/366/276/non_2x/5-star-rating-review-star-transparent-free-png.png" alt="">
+                      <h3>Sacola 1kg de Trigo Natural</h3>
+                      <h1>R$ 199,99 <span class="span-porcent">47% off</span></h1>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" id="swiper-card">
+                    <a href="#"><img  class="img-produto-card" src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt=""></a>
+                    <div class="container-content-card">
+                      <div class="div-favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
+                      </div>
+                      <img  class="img-estrela" src="https://static.vecteezy.com/system/resources/previews/010/366/276/non_2x/5-star-rating-review-star-transparent-free-png.png" alt="">
+                      <h3>Sacola 1kg de Trigo Natural</h3>
+                      <h1>R$ 799,99 <span class="span-porcent">47% off</span></h1>
+                    </div>
+                  </div>
+                  <div class="swiper-slide" id="swiper-card">
+                    <a href="#"><img  class="img-produto-card" src="https://th.bing.com/th/id/R.8108f03836cd6f2930ea6831545b0813?rik=NVtN%2bsApSBhfww&pid=ImgRaw&r=0" alt=""></a>
+                    <div class="container-content-card">
+                      <div class="div-favoritos">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z"/></svg>
+                      </div>
+                      <img  class="img-estrela" src="https://static.vecteezy.com/system/resources/previews/010/366/276/non_2x/5-star-rating-review-star-transparent-free-png.png" alt="">
+                      <h3>Sacola 1kg de Trigo Natural</h3>
+                      <h1>R$ 799,99 <span class="span-porcent">47% off</span></h1>
+                    </div>
+                  </div>
+                  
+                  
+    
+              </div>
+
+              <!-- <div class="swiper-button-next" style="color: green;"></div>
+              <div class="swiper-button-prev" style="color: green;"></div> -->
+                
+              <div class="swiper-pagination-card"></div>
+              </div>
+    
+        </section>
+      
+        <footer>
+          <div class="footer-column">
+              <h3>Links Úteis</h3>
+              <ul class="links-footer">
+                  <li><a href="#" id="active">Início</a></li>
+                  <li><a href="#">Ofertas</a></li>
+                  <li><a href="#">Vender</a></li>
+                  <li><a href="#">Contato</a></li>
+                  <li><a href="./login.html">Entrar</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Redes Sociais</h3>
+              <ul class="social-icons">
+                  <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a></li>
+                  <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a></li>
+                  <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Contato</h3>
+              <p>Email: cultivamais@gmail.com</p>
+              <p>Telefone: (123) 456-7890</p>
+              
+          </div>
+      </footer>
+    </main>
+    
+    <script src="./script.js"></script>
+    <script type="module">
+        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.js'
+  
+        var swiper = new Swiper(".cardSwiper", {
+          autoplay: {
+          delay: 30000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    slidesPerView: 1,
+    spaceBetween: 30,
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination-card",
+      clickable: true,
+    },
+    breakpoints: {
+      1230: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      }
+    }
+  });
+  
+  window.addEventListener('resize', function () {
+    swiper.update(); // Atualiza o swiper quando a janela for redimensionada
+  });
+
+        var swiper = new Swiper(".swiper-card-img-item ", {
+          autoplay: {
+          delay: 30000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    slidesPerView: 1,
+    spaceBetween: 30,
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination-card",
+      clickable: true,
+    },
+    breakpoints: {
+      1230: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      }
+    }
+  });
+  
+  window.addEventListener('resize', function () {
+    swiper.update(); // Atualiza o swiper quando a janela for redimensionada
+  });
+
+  var swiper = new Swiper(".textSwiper", {
+        autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+      },
+      keyboard: {
+        enabled: true,
+      },
+      speed: 600,
+      parallax: true,
+      direction: 'horizontal',
+      loop: true,
+      // pagination: {
+      //   el: ".swiper-pagination",
+      //   clickable: true,
+      //   centeredSlides: true,
+
+      // },
+      // navigation: {
+      //   nextEl: ".swiper-button-next",
+      //   prevEl: ".swiper-button-prev",
+      // },
+    });
+
+    var swiper = new Swiper(".slideSwiper", {
+        autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+      },
+      keyboard: {
+        enabled: true,
+      },
+      speed: 600,
+      parallax: true,
+      direction: 'horizontal',
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        centeredSlides: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+</script>
+
+<button onclick="voltarAoTopo()" id="btnVoltarTopo" class="escondido">
+  <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fff}</style><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+</button>
+
+
+</body>
+</html>
